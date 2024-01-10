@@ -17,7 +17,6 @@ def toggle_run_script():
      global run_script
      run_script = not run_script
 keyboard.add_hotkey("q", toggle_run_script)
-
 while True:
     if run_script:
         for coordinates in result:
@@ -46,3 +45,4 @@ while True:
             if i ==60:
                 pyautogui.keyUp('alt')
                 exit()
+

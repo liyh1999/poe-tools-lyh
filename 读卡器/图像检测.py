@@ -40,14 +40,17 @@ for i in range(1,60):
        roi = main_image_cv[left_top_y:right_bottom_y, left_top_x:right_bottom_x]
        #灰度化
        gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-       # 二值化
-       # 使用 pytesseract 进行 OCR
+       #对比度增强试试
+       alpha = 1.5  # 对比度控制
+       beta = 1  # 亮度控制
+       enhanced = cv2.convertScaleAbs(gray, alpha=alpha, beta=beta)
        # 配置参数以优化数字识别
        custom_config = r'--oem 3 --psm 6 -c tessedit_char_whitelist=0123456789/'
        text = pytesseract.image_to_string(gray, config=custom_config)
        print('第'+str(i)+"张蓝图中的命运卡数量是",text)
     #存储结果
-    # output_path = f".\cheak\chkak_{i}.png"
-    # cv2.imwrite(output_path, main_image_cv)
+    output_path = f".\gray\gray_{i}.png"
+    cv2.imwrite(output_path, enhanced)
+
 
 
