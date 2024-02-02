@@ -15,7 +15,6 @@ def toggle_run_script():
     global run_script
     run_script = not run_script
 keyboard.add_hotkey("t", toggle_run_script)
-
 while True:
     if run_script:
         for coordinates in result:

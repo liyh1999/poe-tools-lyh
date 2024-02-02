@@ -2,7 +2,7 @@ import pyautogui
 import keyboard
 import time
 import pyperclip
-detection_word = ['保险箱','暴怒','庄稼','庄园','塑界','裂界','征服者','词缀腐化','深渊','迷雾','镀金','符纹','基底词缀','走私者','更强大','进度']#罗盘检测词
+detection_word = ['保险箱','暴怒','庄稼','庄园','塑界','裂界','征服者','词缀腐化','深渊','迷雾','镀金','符纹','基底词缀','走私者','更强大','进度','夏乌拉','琼','阿尔瓦','高一阶','被捕捉的','战乱']#罗盘检测词
 #(370,600)是六分仪的位置，(400,400)是仓库里正常的六分仪的位置(900,880)是石头的位置,(460,600)是放测绘罗盘的位置，（1500，600）是放拿出来的充能罗盘的位置
 def 拓印罗盘():
     pyautogui.moveTo(460, 600)
@@ -50,7 +50,7 @@ def 全程处理():
             if i in clipboard_content:
                 判断词= False
     pyautogui.keyUp("shift")  # 释放shift
-    if '走私' in clipboard_content:
+    if '琼'  in clipboard_content or '阿尔瓦' in clipboard_content or '夏乌拉' in clipboard_content or '高一阶'  in clipboard_content or '被捕捉的' in clipboard_content:
 
         拓印罗盘()
         按下键盘右键(1)
@@ -115,12 +115,12 @@ def 全程处理():
         按下键盘右键(11)
         存进仓库()
         按下键盘左键(11)
-    if '符纹' in clipboard_content:
-
-        拓印罗盘()
-        按下键盘右键(12)
-        存进仓库()
-        按下键盘左键(12)
+    # if '战乱' in clipboard_content:
+    #
+    #     拓印罗盘()
+    #     按下键盘右键(12)
+    #     存进仓库()
+    #     按下键盘左键(12)
     if '非传奇夺宝' in clipboard_content:
 
         拓印罗盘()
